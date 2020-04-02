@@ -1,5 +1,5 @@
 <h1>This is my project form</h1>
-<form>
+<form action="/projects" method="POST">
   Project Idea Name: <input type="text" name="name">
   <br>
   On a scale from 1-10:
@@ -9,4 +9,8 @@
    How excited are you about your project idea?<input type= "text" name="passion">
   <br>
    How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "text" name="deadline">
+   <br>
+   <input type="hidden" name="rating" id="rating" value="<?=(comfort+passion+deadline)?>" />
+   <br>
+   <input type="submit">
  </form>

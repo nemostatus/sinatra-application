@@ -5,7 +5,7 @@ class ProjectController < ApplicationController
   end
   
   post '/projects' do 
-    "process our form"
+   "hello"
   
   end 
 
