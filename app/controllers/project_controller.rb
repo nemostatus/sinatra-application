@@ -5,8 +5,12 @@ class ProjectController < ApplicationController
   end
   
   post '/projects' do 
-   "hello"
-  
+   @project = Project.create(comfort: params[:comfort],
+   passion: params[:passion],
+   deadline: params[:deadline],
+   rating: params[:rating]
+   )
+  binding.pry
   end 
 
 end
