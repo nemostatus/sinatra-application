@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_113348) do
     t.integer "passion"
     t.integer "deadline"
     t.integer "rating"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
