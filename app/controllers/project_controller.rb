@@ -1,6 +1,12 @@
 class ProjectController < ApplicationController 
+  
   get '/projects/new' do
-    "render new project"
+    erb :'/projects/new'
   end
+  
+  post '/projects' do 
+    "process our form"
+  
+  end 
 
 end
