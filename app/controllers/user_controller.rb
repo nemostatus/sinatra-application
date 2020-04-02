@@ -1,3 +1,5 @@
 class UserController < ApplicationController
-
-end
+  get '/users/signup' do
+    "this is the signup route"
+  end
+end 
