@@ -8,7 +8,7 @@ class ProjectController < ApplicationController
    @project = Project.create(comfort: params[:comfort],
    passion: params[:passion],
    deadline: params[:deadline],
-   rating: params[:rating]
+   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
    )
   binding.pry
   end 
