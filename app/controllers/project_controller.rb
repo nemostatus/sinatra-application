@@ -5,7 +5,8 @@ class ProjectController < ApplicationController
   end
   
   post '/projects' do 
-   @project = Project.create(comfort: params[:comfort],
+   @project = Project.create(name: params[:name],
+     comfort: params[:comfort],
    passion: params[:passion],
    deadline: params[:deadline],
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
