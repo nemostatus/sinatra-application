@@ -12,8 +12,7 @@ class ProjectController < ApplicationController
    passion: params[:passion],
    deadline: params[:deadline],
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
-   
-   )
+  )
   
  redirect "/projects/#{@project.id}"
   end 
@@ -33,7 +32,7 @@ class ProjectController < ApplicationController
     erb :'/projects/edit'
   end
   
-  patch '/projects/:id' do
+  post '/projects/:id' do
     @project = Project.find(params[:id])
     @project.update(name: params[:name],
      comfort: params[:comfort],
@@ -47,6 +46,5 @@ class ProjectController < ApplicationController
   delete '/projects/:id' do 
     @project = Project.find(params[:id])
     @project.destroy
-    redirect '/projects'
-  end
+    end
 end
