@@ -10,6 +10,7 @@ You're this sure that you'll meet deadline with this project idea.<%=@project.de
 <br>
 
 You're overall project idea rating is <%=@project.rating%>/30
+<br>
 <% if @project.rating.to_i > 27%>  Project idea Grade: A
 <%elsif @project.rating.to_i > 24%>  Project idea Grade: B
 <%elsif @project.rating.to_i > 21%> Project idea Grade: C
