@@ -1,9 +1,9 @@
-<%@projects.each do |project| %>
+<% @projects.each do |project| %>
 Project Number:<%=project.id%>
 <br>
 Project Name:<%=project.name%>
 <br>
 Project Rating<%=project.rating%>
 <br>
-Project Username<%=project.user.username%>
+Project Username<%=project.user_id.username%>
 <%end%>

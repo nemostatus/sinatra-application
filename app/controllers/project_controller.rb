@@ -20,7 +20,10 @@ class ProjectController < ApplicationController
   end 
   
   get '/projects' do 
+    
     @projects = Project.all
+    
+    
     erb :'/projects/index'
   end  
   end

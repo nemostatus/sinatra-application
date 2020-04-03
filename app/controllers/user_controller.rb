@@ -8,6 +8,7 @@ class UserController < ApplicationController
     username: params[:username], 
     password: params[:password]
     )
+   
     redirect "/users/#{@user.id}"
  end 
  
