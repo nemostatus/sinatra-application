@@ -18,6 +18,9 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
     erb :'/projects/show'
   end 
-    
-    
+  
+  get '/projects' do 
+    @projects = Project.all
+    erb :'/projects/index'
+  end  
   end
