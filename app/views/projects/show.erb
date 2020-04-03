@@ -8,7 +8,8 @@ You're project idea passion level is <%=@project.passion%>/10
 <br>
 You're this sure that you'll meet deadline with this project idea.<%=@project.deadline%>/10
 <br>
-<% if @project.rating.to_i == 0%> 
+<% if @project.rating.to_i == 0%>
+
 <%else%>
 You're overall project idea rating is <%=@project.rating%>/30
 <%end%>
