@@ -1,3 +1,4 @@
+require './app/controllers/project_controller.rb'
 class UserController < ApplicationController
   get '/users/signup' do
     erb :"/users/signup"
