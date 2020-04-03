@@ -32,4 +32,13 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
     erb :'/projects/edit'
   end
+  
+  patch '/projects/:id' do
+    @project = Project.find(params[:id])
+    @project.update(name: params[:name],
+     comfort: params[:comfort],
+   passion: params[:passion],
+   deadline: params[:deadline],
+   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
+   )
 end
