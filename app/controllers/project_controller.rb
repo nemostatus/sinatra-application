@@ -24,10 +24,12 @@ class ProjectController < ApplicationController
   end 
   
   get '/projects' do 
-    
-    @projects = Project.all
-    
-    
-    erb :'/projects/index'
-  end  
+     @projects = Project.all
+     erb :'/projects/index'
+  end 
+  
+  get '/projects/:id/edit' do 
+    @project = Project.find(params[:id])
+    erb :'/projects/edit'
   end
+end

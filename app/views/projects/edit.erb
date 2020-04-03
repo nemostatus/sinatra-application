@@ -1,0 +1,17 @@
+<h1>This is my project form</h1>
+<form action="/projects/#{@project.id}" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Project Idea Name: <input type="text" value="<%=@project.name%>" name="name">
+  <br>
+  On a scale from 1-10:
+  <br>
+  How comfortable are you with your current skillset making your project idea a reality? <input type= "text" id="comfort" value="<%=@project.comfort%>" name="comfort">
+  <br>
+   How excited are you about your project idea?<input type= "text" id="passion" value="<%=@project.passion%>" name="passion">
+  <br>
+   How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "text" id="deadline"value="<%=@project.deadline%>" name="deadline">
+   <br>
+   <input type="hidden" name="rating">
+   <br>
+   <input type="submit">
+ </form>
