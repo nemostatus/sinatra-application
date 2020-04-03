@@ -43,4 +43,9 @@ class ProjectController < ApplicationController
    )
    redirect "/projects/#{@project.id}"
  end
+ 
+  delete '/projects/:id:/delete' do 
+    @project = Project.find(params[:id])
+    @project.delete
+  end
 end
