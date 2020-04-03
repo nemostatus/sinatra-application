@@ -41,4 +41,6 @@ class ProjectController < ApplicationController
    deadline: params[:deadline],
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
    )
+   redirect "/projects/#{@project.id}"
+ end
 end
