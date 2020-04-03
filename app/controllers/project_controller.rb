@@ -45,7 +45,7 @@ class ProjectController < ApplicationController
  
   delete '/projects/:id' do 
     @project = Project.find(params[:id])
-    @project.destroy
+    @project.destroy_all
     redirect to '/projects'
     end
 end

@@ -7,3 +7,8 @@ Project Rating:<%=project.rating%>
 <br>
 <br>
 <%end%>
+
+<form method="post" action="/projects">
+<input id= "hidden" type="hidden" name="_method" value="DELETE">
+  <input type = "submit" value="delete">
+  </form>
