@@ -1,7 +1,11 @@
-require './app/controllers/project_controller.rb'
+
 class UserController < ApplicationController
   get '/users/signup' do
+      if logged_in? 
+         redirect "/users/#{current_user.id}"
+      else
     erb :"/users/signup"
+  end
   end
   
   post '/users/signup' do #need middleware for delete action #need to check in tux what my db looks like
