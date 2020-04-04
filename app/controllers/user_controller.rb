@@ -19,7 +19,8 @@ class UserController < ApplicationController
  end
  
  post '/users/login' do 
-   
+   @user = User.find_by(username: params[:username])
+   binding.pry
  end 
  
   get '/users/:id' do
