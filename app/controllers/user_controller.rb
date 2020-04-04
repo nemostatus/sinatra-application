@@ -4,13 +4,22 @@ class UserController < ApplicationController
     erb :"/users/signup"
   end
   
-  post '/users/signup' do #need middleware for delete action #need to check in tux what my db looks like
+  post '/users' do #need middleware for delete action #need to check in tux what my db looks like
     @user = User.create(email: params[:email], 
     username: params[:username], 
     password: params[:password]
     )
-   
+   session[:user_id] = @user.id
+ 
     redirect "/users/#{@user.id}"
+ end 
+ 
+ get '/users/login' do 
+  erb :'/users/login'
+ end
+ 
+ post '/users/login' do 
+   
  end 
  
   get '/users/:id' do
