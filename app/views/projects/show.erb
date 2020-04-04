@@ -22,7 +22,7 @@ You're overall project idea rating is <%=@project.rating%>/30
 <%else%> Project idea Grade: F
 <%end%>
 
-<form method="post" action="/projects/<%=@project.id%>">
-<input id= "hidden" type="hidden" name="_method" value="DELETE">
+<form action="/projects/<%=@project.id%>" method="POST">
+<input id= "hidden" type="hidden" name="_method" value="DELETE"/>
   <input type = "submit" value="delete">
   </form>
