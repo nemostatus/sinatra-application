@@ -23,6 +23,7 @@ class UserController < ApplicationController
       else
          erb :'/users/login'
       end
+    end
  
   
   post '/users/login' do 
