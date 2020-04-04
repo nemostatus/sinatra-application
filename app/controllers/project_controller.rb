@@ -1,5 +1,5 @@
 
-require './config/environment'
+
 class ProjectController < ApplicationController 
   get '/projects/new' do
     erb :'/projects/new'
@@ -45,7 +45,13 @@ class ProjectController < ApplicationController
  
   delete '/projects/:id' do 
     @project = Project.find(params[:id])
-   @project.delete
+   @project.destroy
     redirect to '/projects'
     end
+    
+  delete '/projects' do 
+    @projects = Project.all 
+    @projects.destroy_all
+    redirect '/projects/new'
+  end
 end
