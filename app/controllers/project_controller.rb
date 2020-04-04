@@ -15,6 +15,7 @@ class ProjectController < ApplicationController
   )
   @session["project"] = @project 
   
+  
  redirect "/projects/#{@project.id}"
   end 
   

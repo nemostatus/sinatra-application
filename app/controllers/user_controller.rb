@@ -5,11 +5,13 @@ class UserController < ApplicationController
   end
   
   post '/users/signup' do #need middleware for delete action #need to check in tux what my db looks like
+  @session = session 
     @user = User.create(email: params[:email], 
     username: params[:username], 
     password: params[:password]
     )
-   
+   @session["user"] = @user
+   binding.pry
     redirect "/users/#{@user.id}"
  end 
  
