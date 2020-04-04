@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     set :method_override, true
-
+    set :session_secret, "1s2a3l4t"
   end
 
   get "/" do
