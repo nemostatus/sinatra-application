@@ -28,7 +28,8 @@ class UserController < ApplicationController
  post '/users/login' do 
    @user = User.find_by(username: params[:username], password: params[:password])
     if  @user && params[:password] == @user.password
-    session[:user_id] = @user.id
+        @session = session
+    @session[:user_id] = @user.id
     redirect '/users/:id' 
     else 
     redirect '/users/login'
@@ -39,4 +40,10 @@ class UserController < ApplicationController
     @user = User.find(session[:user_id])
     erb :'/users/show'
   end  
+  
+  get '/users/logout' do 
+   @session.clear
+   redirect '/users/login'
+  end 
+  
 end
