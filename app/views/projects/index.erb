@@ -5,12 +5,12 @@ Project Name:<%=project.name%>
 Project Rating:<%=project.rating%>
 <br>
 
-<a href='/projects/<%=project.id%>'>View</a> <a href='/projects/<%=project.id%>/edit'>Edit</a>  <a href=>Delete</a>
+<a href='/projects/<%=project.id%>'>View</a> <a href='/projects/<%=project.id%>/edit'>Edit</a>  
+<form method="post" action="/projects/<%=project.id%>">
+<input id= "hidden" type="hidden" name="_method" value="DELETE">
+  <input type = "submit" value="Delete ">
+  </form>
 <br>
 <%end%>
 <br>
 
-<form method="post" action="/projects">
-<input id= "hidden" type="hidden" name="_method" value="DELETE">
-  <input type = "submit" value="Delete All">
-  </form>
