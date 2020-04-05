@@ -12,7 +12,10 @@
   <br>
    How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "text" id="deadline"value="<%=@project.deadline%>" name="deadline">
    <br>
-   Give a brief description of your project. <input type= "text" id="description "value="<%=@project.description%>" name="description">
+   Give a brief description of your project. 
+   <br>
+   <textarea name="description" cols="40" rows="5"  id="description" value="<%=@project.description%>"></textarea>
+   <br>
    <input type="submit">
    <br>
    <input type="hidden" name="rating">
