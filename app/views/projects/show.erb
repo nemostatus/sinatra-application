@@ -12,6 +12,7 @@ You're this sure that you'll meet deadline with this project idea.<%=@project.de
 
 <%else%>
 You're overall project idea rating is <%=@project.rating%>/30
+
 <%end%>
 <br>
 <% if @project.rating.to_i > 27%>  Project idea Grade: A
@@ -21,8 +22,6 @@ You're overall project idea rating is <%=@project.rating%>/30
 <%elsif @project.rating.to_i == 0%>
 <%else%> Project idea Grade: F
 <%end%>
-
-
 <form action="/projects/<%=@project.id%>" method="POST">
 <input id= "hidden" type="hidden" name="_method" value="DELETE"/>
   <input type = "submit" value="delete">
