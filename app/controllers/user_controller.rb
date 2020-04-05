@@ -4,7 +4,11 @@ class UserController < ApplicationController
     erb :"/users/signup"
   end
   
-  post '/users' do #need middleware for delete action #need to check in tux what my db looks like
+  
+  post '/users/signup' do 
+   if params[:username] = "" && params[:password] == ""
+      redirect "/users/signup"
+  else
     @user = User.create(email: params[:email], 
     username: params[:username], 
     password: params[:password]
@@ -13,14 +17,14 @@ class UserController < ApplicationController
  
     redirect "/users/#{@user.id}"
  end 
- 
+ end 
  get '/users/login' do 
   erb :'/users/login'
  end
  
  post '/users/login' do 
    @user = User.find_by(username: params[:username])
-   binding.pry
+   
  end 
  
   get '/users/:id' do
