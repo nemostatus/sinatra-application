@@ -7,7 +7,7 @@ class ProjectController < ApplicationController
   
   post '/projects' do 
    
-   @project = Project.create(name: params[:name],
+   @project = Project.new(name: params[:name],
      comfort: params[:comfort],
    passion: params[:passion],
    deadline: params[:deadline],
@@ -15,7 +15,7 @@ class ProjectController < ApplicationController
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
   )
    
-  
+  @project.save
   
  redirect "/projects/#{@project.id}"
   end 
