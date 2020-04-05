@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_113348) do
     t.integer "comfort"
     t.integer "passion"
     t.integer "deadline"
+    t.string "description"
     t.integer "rating"
     t.integer "user_id"
   end

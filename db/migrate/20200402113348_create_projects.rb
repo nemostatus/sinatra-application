@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.integer :comfort 
       t.integer :passion
       t.integer :deadline
+      t.string :description
       t.integer :rating
       t.integer :user_id 
 
