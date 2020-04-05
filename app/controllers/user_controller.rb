@@ -14,36 +14,37 @@ class UserController < ApplicationController
     password: params[:password]
     )
     @user.save
-    @session = session 
-    @session[:user_id] = @user.id
+ 
+    session[:user_id] = @user.id
 
    redirect "/users/#{@user.id}"
  end 
  end 
  
- get '/users/login' do 
+ get '/login' do 
   erb :'/users/login'
  end
  
- post '/users/login' do 
-   @user = User.find_by(username: params[:username], password: params[:password])
-    if  @user && params[:password] == @user.password
-        @session = session
-    @session[:user_id] = @user.id
-    redirect '/users/:id' 
-    else 
-    redirect '/users/login'
- end 
- end
+ post '/login' do 
+   
+    @user = User.find_by(username: params[:username])
+      if @user && @user.authenticate(params[:password])
+         session[:user_id] = @user.id 
+         redirect "/users/#{@user.id}"
+      else  
+         redirect "/login"
+      end 
+
+     end
  
   get '/users/:id' do
-    @user = User.find(session[:user_id])
+ @user = User.find(params[:id])
     erb :'/users/show'
   end  
   
   get '/logout' do 
    session.clear
-   redirect '/users/login'
+   redirect '/login'
   end 
   
 end
