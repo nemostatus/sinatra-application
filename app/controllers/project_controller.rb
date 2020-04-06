@@ -14,7 +14,8 @@ class ProjectController < ApplicationController
    description: params[:description],
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
   )
-   
+   @project.user_id = session[:user_id]
+   binding.pry
   @project.save
   
  redirect "/projects/#{@project.id}"
