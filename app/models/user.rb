@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base 
 
-validates :username, presence: true
- 
-  has_many :projects
+  validates_uniqueness_of :username, :message => "username taken"
   has_secure_password
 end 

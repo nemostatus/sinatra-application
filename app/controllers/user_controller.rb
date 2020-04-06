@@ -3,10 +3,10 @@ class UserController < ApplicationController
   get '/users/signup' do
     erb :"/users/signup"
   end
-  
-  
+
   post '/users/signup' do 
    if params[:username] == "" || params[:password] == ""
+    
      redirect '/users/signup' 
    else
     @user = User.new(email: params[:email], 
@@ -45,6 +45,10 @@ class UserController < ApplicationController
   get '/logout' do 
    session.clear
    redirect '/login'
+  end 
+  
+  get '/users/' do 
+    erb :'/users/message'
   end 
   
 end
