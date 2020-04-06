@@ -1,13 +1,13 @@
 <a href='/users/<%=session[:user_id]%>'>Home</a> 
 <h1>Project data</h1>
 
-<%=@project.name%> project
+Project Name: <%=@project.name%> 
 <br>
-You're project idea comfort level is <%=@project.comfort%>/10 
+ Project comfort rating: <%=@project.comfort%>/10 
 <br>
-You're project idea passion level is <%=@project.passion%>/10 
+Project passion rating <%=@project.passion%>/10 
 <br>
-You're this sure that you'll meet deadline with this project idea.<%=@project.deadline%>/10
+You're this sure that you'll meet deadline with this project idea:<%=@project.deadline%>/10
 <br>
 <% if @project.rating.to_i == 0%>
 
