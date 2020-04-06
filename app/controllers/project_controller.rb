@@ -28,7 +28,7 @@ class ProjectController < ApplicationController
   
   get '/projects' do 
 
-     @projects = Project.where(:user_id => session[:user_id])
+     @projects = Project.where(:user_id => session[:user_id]).order('rating DESC')
    
      erb :'/projects/index'
   end 
