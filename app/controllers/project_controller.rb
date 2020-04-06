@@ -12,11 +12,11 @@ class ProjectController < ApplicationController
    passion: params[:passion],
    deadline: params[:deadline],
    description: params[:description],
-   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
+   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i,
+   user_id: session[:user_id]
   )
-   @project.user_id = session[:user_id]
-   binding.pry
-  @project.save
+
+ @project.save
   
  redirect "/projects/#{@project.id}"
   end 
@@ -27,7 +27,9 @@ class ProjectController < ApplicationController
   end 
   
   get '/projects' do 
-     @projects = Project.all
+
+     @projects = Project.where(:user_id => session[:user_id])
+   
      erb :'/projects/index'
   end 
   
