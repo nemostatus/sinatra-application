@@ -12,7 +12,7 @@
   <option value="rails with jquery">Ruby on rails with jQuery</option>
   <option value="react redux">React Redux</option>
   <option value="other">Other</option>
-  <option value= "default" selected><%=@project.project_type%></option>
+  <option value= "<%=@project.project_type%>" selected disable hidden ><%=@project.project_type%></option>
 </select>
   <br>
   On a scale from 1-10:
