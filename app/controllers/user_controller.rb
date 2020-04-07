@@ -27,7 +27,7 @@ class UserController < ApplicationController
  end
  
  post '/login' do 
-   
+  
     @user = User.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])
          session[:user_id] = @user.id 
@@ -40,12 +40,13 @@ class UserController < ApplicationController
  
   get '/users/:id' do
     #conditionial needed to view the endpoint
-   @user = User.find(params[:id]) #maybe before doing this action authenticate the session so that 1 user can't simply edit the endpoint 
-   erb :'/users/show'
-
-
+   @user = User.find(params[:id])  
+     if @user.id == current_user.id
+     erb :'/users/show'
+    else 
+      erb :'/users/authentication'
   end
-
+  end
   
   get '/logout' do 
    session.clear
