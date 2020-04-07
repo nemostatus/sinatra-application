@@ -16,6 +16,7 @@ class UserController < ApplicationController
     @user.save
  
     session[:user_id] = @user.id
+   
 
    redirect "/users/#{@user.id}"
  end 
@@ -38,9 +39,13 @@ class UserController < ApplicationController
      end
  
   get '/users/:id' do
- @user = User.find(params[:id])
-    erb :'/users/show'
-  end  
+    #conditionial needed to view the endpoint
+   @user = User.find(params[:id]) #maybe before doing this action authenticate the session so that 1 user can't simply edit the endpoint 
+   erb :'/users/show'
+
+
+  end
+
   
   get '/logout' do 
    session.clear
