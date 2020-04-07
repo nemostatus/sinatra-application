@@ -27,6 +27,9 @@ You're overall project idea rating is <%=@project.rating%>/30
 <%end%>
 <br>
 Description: <%=@project.description%>
+<br>
+<a href='/projects/<%=@project.id%>/edit'>Edit</a> 
+<br>
 <form action="/projects/<%=@project.id%>" method="POST">
 <input id= "hidden" type="hidden" name="_method" value="DELETE"/>
   <input type = "submit" value="delete">
