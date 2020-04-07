@@ -5,13 +5,14 @@
   Project Idea Name: <input type="text" value="<%=@project.name%>" name="name" autocomplete="off">
   <br>
   Project Type: 
-  <select id="project_type" name="project_type" value= "<%=@project.project_type%>" >
+  <select id="project_type" name="project_type" >
   <option value="CLI">CLI</option>
   <option value="sinatra">Sinatra</option>
   <option value="rails">Ruby on rails</option>
   <option value="rails with jquery">Ruby on rails with jQuery</option>
   <option value="react redux">React Redux</option>
   <option value="other">Other</option>
+  <option value= "default" selected><%=@project.project_type%></option>
 </select>
   <br>
   On a scale from 1-10:
