@@ -4,6 +4,16 @@
   <input id="hidden" type="hidden" name="_method" value="patch">
   Project Idea Name: <input type="text" value="<%=@project.name%>" name="name" autocomplete="off">
   <br>
+  Project Type: 
+  <select id="project_type" name="project_type" value= "<%=@project.project_type%>" >
+  <option value="CLI">CLI</option>
+  <option value="sinatra">Sinatra</option>
+  <option value="rails">Ruby on rails</option>
+  <option value="rails with jquery">Ruby on rails with jQuery</option>
+  <option value="react redux">React Redux</option>
+  <option value="other">Other</option>
+</select>
+  <br>
   On a scale from 1-10:
   <br>
   How comfortable are you with your current skillset making your project idea a reality? <input type= "number" id="comfort" value="<%=@project.comfort%>" name="comfort" autocomplete="off">
