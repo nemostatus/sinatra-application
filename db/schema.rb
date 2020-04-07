@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_113348) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "project_type"
     t.integer "comfort"
     t.integer "passion"
     t.integer "deadline"

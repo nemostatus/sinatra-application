@@ -8,7 +8,7 @@ class ProjectController < ApplicationController
   post '/projects' do 
    
    @project = Project.new(name: params[:name],
-   type: params[:type],
+   project_type: params[:project_type],
      comfort: params[:comfort],
    passion: params[:passion],
    deadline: params[:deadline],

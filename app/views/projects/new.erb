@@ -3,7 +3,17 @@
 <form action="/projects" method="POST">
   Project Idea Name: <input type="text" name="name" autocomplete="off">
   <br>
-  Project Type:
+  Project Type: <select id="project_type" name="project_type">
+  <option value="CLI">CLI</option>
+  <option value="sinatra">Sinatra</option>
+  <option value="rails">Ruby on rails</option>
+  <option value="rails with jquery">Ruby on rails with jQuery</option>
+  <option value="react redux">React Redux</option>
+  <option value="other">Other</option>
+</select>
+  <br>
+  <br>
+  
   On a scale from 1-10:
   <br>
   How comfortable are you with your current skillset making your project idea a reality? <input type= "number" id="comfort" name="comfort" autocomplete="off">
