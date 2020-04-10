@@ -1,8 +1,13 @@
   
 class UserController < ApplicationController
-  get '/users/signup' do
-    erb :"/users/signup"
-  end
+    get '/users/signup' do
+       if logged_in? 
+         redirect "/users/#{current_user.id}"
+      else
+         erb :'/users/signup'        
+      end 
+    end
+
 
   post '/users/signup' do 
    if params[:username] == "" || params[:password] == ""
@@ -41,7 +46,7 @@ class UserController < ApplicationController
   get '/users/:id' do
     #conditionial needed to view the endpoint
    @user = User.find(params[:id])  
-     if @user.id == current_user.id
+     if @user.id == current_user.id #im testing this line if user.id doesnt match current_users id then it will go to auth
      erb :'/users/show'
     else 
       erb :'/users/authentication'
