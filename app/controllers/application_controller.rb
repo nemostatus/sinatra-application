@@ -1,5 +1,3 @@
-
-
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -14,7 +12,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect "/users/#{session[:user_id]}"
     else
-    redirect '/users/signup'
+     redirect '/users/signup'
   end
   end 
   
