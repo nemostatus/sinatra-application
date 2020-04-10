@@ -24,10 +24,15 @@ class ProjectController < ApplicationController
   end 
   
   get '/projects/:id' do 
+    #match project user_id with current user_id
     @project = Project.find(params[:id])
+
+    if @project.user_id == current_user.id
     erb :'/projects/show'
+   else 
+    erb :'/users/authentication'
   end 
-  
+  end
   get '/projects' do 
 
      @projects = Project.where(:user_id => session[:user_id]).order('rating DESC')
@@ -36,6 +41,8 @@ class ProjectController < ApplicationController
   end 
   
   get '/projects/:id/edit' do 
+    #make it unique to user by session[:user_id]
+
     @project = Project.find(params[:id])
 
     erb :'/projects/edit'
