@@ -31,6 +31,10 @@ You're overall project idea rating is <%=@project.rating%>/30
 <br>
 Description: <%=@project.description%>
 <br>
+Project created on:  <%=@project.created_at%>
+<br>
+Project updated on: <%=@project.updated_at%>
+<br>
 <a href='/projects/<%=@project.id%>/edit'>Edit</a> 
 <br>
 <form action="/projects/<%=@project.id%>" method="POST">

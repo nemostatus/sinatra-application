@@ -13,6 +13,10 @@ Project Rating:<%=project.rating%>
 <br>
 Project Description: <%=project.description%>
 <br>
+Project created on:  <%=project.created_at%>
+<br>
+Project updated on: <%=project.updated_at%>
+<br>
 
 <a href='/projects/<%=project.id%>'>View</a> <a href='/projects/<%=project.id%>/edit'>Edit</a>  
 <form method="post" action="/projects/<%=project.id%>">

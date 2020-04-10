@@ -14,7 +14,7 @@ class ProjectController < ApplicationController
    deadline: params[:deadline],
    description: params[:description],
    rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i,
-   user_id: session[:user_id]
+   user_id: session[:user_id], created_at: params[:created_at], updated_at: params[:updated_at]
   )
 
  @project.save
