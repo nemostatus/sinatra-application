@@ -4,6 +4,8 @@ class ProjectController < ApplicationController
   get '/projects/new' do
         if logged_in?
     erb :'/projects/new'
+   else
+     redirect '/users/signup'
   end
   end
   post '/projects' do 

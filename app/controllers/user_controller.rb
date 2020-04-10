@@ -49,7 +49,8 @@ class UserController < ApplicationController
  
   get '/users/:id' do
     #conditionial needed to view the endpoint
-   @user = User.find(params[:id])  
+   @user = User.find(params[:id]) 
+  
      if @user.id == current_user.id #im testing this line if user.id doesnt match current_users id then it will go to auth
      erb :'/users/show'
     else 
