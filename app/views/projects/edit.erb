@@ -1,10 +1,14 @@
 <a href='/users/<%=session[:user_id]%>'>Home</a> 
 <h1>Update this project</h1>
+
+*Required field or data won't be edited
+<br>
+<br>
 <form action="/projects/<%=@project.id%>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  Project Idea Name: <input type="text" value="<%=@project.name%>" name="name" autocomplete="off">
+*Project Idea Name: <input type="text" value="<%=@project.name%>" name="name" autocomplete="off">
   <br>
-  Project Type: 
+  *Project Type: 
   <select id="project_type" name="project_type" >
   <option value="CLI">CLI</option>
   <option value="Sinatra">Sinatra</option>
@@ -17,13 +21,13 @@
   <br>
   On a scale from 1-10:
   <br>
-  How comfortable are you with your current skillset making your project idea a reality? <input type= "number" id="comfort" value="<%=@project.comfort%>" name="comfort" autocomplete="off">
+  *How comfortable are you with your current skillset making your project idea a reality? <input type= "number" id="comfort" value="<%=@project.comfort%>" name="comfort" autocomplete="off">
   <br>
-   How excited are you about your project idea?<input type= "number" id="passion" value="<%=@project.passion%>" name="passion" autocomplete="off">
+   *How excited are you about your project idea?<input type= "number" id="passion" value="<%=@project.passion%>" name="passion" autocomplete="off">
   <br>
-   How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number" id="deadline"value="<%=@project.deadline%>" name="deadline" autocomplete="off">
+   *How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number" id="deadline"value="<%=@project.deadline%>" name="deadline" autocomplete="off">
    <br>
-   Give a brief description of your project. 
+   *Give a brief description of your project. 
    <br>
    <textarea name="description" cols="40" rows="5"  id="description" ><%=@project.description%></textarea>
    <br>
