@@ -74,6 +74,6 @@ else
   delete '/projects' do 
     @projects = Project.all 
     @projects.destroy_all
-    redirect '/projects/new'
+    redirect "/users/#{current_user.id}"
   end
 end
