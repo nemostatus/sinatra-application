@@ -40,4 +40,7 @@ Project updated on: <%=@project.updated_at%>
 <form action="/projects/<%=@project.id%>" method="POST">
 <input id= "hidden" type="hidden" name="_method" value="DELETE"/>
   <input type = "submit" value="delete">
+  <br>
+  <br>
+  <a href='/projects'>Your projects</a>
   </form>
