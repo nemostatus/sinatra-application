@@ -73,4 +73,8 @@ class ProjectController < ApplicationController
     @projects.destroy_all
     redirect "/users/#{current_user.id}"
   end
+  
+  get '/projects/' do 
+    erb :'/projects/message'
+  end
 end

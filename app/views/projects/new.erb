@@ -1,9 +1,11 @@
 <a href='/users/<%=session[:user_id]%>'>Home</a> 
+<br>
+*Required fields
 <h1>Create a new Project Idea</h1>
 <form action="/projects" method="POST">
-  Project Idea Name: <input type="text" name="name" autocomplete="off">
+*Project Idea Name: <input type="text" name="name" autocomplete="off">
   <br>
-  Project Type: <select id="project_type" name="project_type">
+  *Project Type: <select id="project_type" name="project_type">
   <option value="CLI">CLI</option>
   <option value="Sinatra">Sinatra</option>
   <option value="Ruby on rails">Ruby on rails</option>
@@ -16,13 +18,13 @@
   
   On a scale from 1-10:
   <br>
-  How comfortable are you with your current skillset making your project idea a reality? <input type= "number" min="0" max="10"id="comfort" name="comfort" autocomplete="off">
+  *How comfortable are you with your current skillset making your project idea a reality? <input type= "number" min="0" max="10"id="comfort" name="comfort" autocomplete="off">
   <br>
-   How excited are you about your project idea?<input type= "number" min="0" max="10" id="passion" name="passion" autocomplete="off">
+   *How excited are you about your project idea?<input type= "number" min="0" max="10" id="passion" name="passion" autocomplete="off">
   <br>
-   How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number" min="0" max="10" id="deadline" name="deadline" autocomplete="off">
+   *How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number" min="0" max="10" id="deadline" name="deadline" autocomplete="off">
    <br>
-    Give a brief description of your project.
+    *Give a brief description of your project.
     <br>
     <textarea name="description" cols="40" rows="5"></textarea> 
 
