@@ -28,8 +28,12 @@ class UserController < ApplicationController
  end 
  
  get '/login' do 
+    if logged_in?   
+         redirect "/users/#{current_user.id}"  
+      else
   erb :'/users/login'
  end
+ end 
  
  post '/login' do 
   
