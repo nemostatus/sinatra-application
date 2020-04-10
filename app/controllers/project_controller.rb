@@ -74,7 +74,7 @@ class ProjectController < ApplicationController
     
   delete '/projects' do 
     @projects = Project.all.where(:user_id => session[:user_id])
-    if @project.user_id == current_user.id
+   if current_user
     @projects.destroy_all
     redirect "/users/#{current_user.id}"
   end
