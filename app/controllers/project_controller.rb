@@ -52,6 +52,7 @@ class ProjectController < ApplicationController
    
   patch '/projects/:id' do
     @project = Project.find(params[:id])
+    if @project.user_id == current_user.id
     @project.update(name: params[:name],
      comfort: params[:comfort],
      passion: params[:passion],
@@ -61,17 +62,22 @@ class ProjectController < ApplicationController
      )
     redirect "/projects/#{@project.id}"
  end
+ end 
  
   delete '/projects/:id' do 
     @project = Project.find(params[:id])
+    if @project.user_id == current_user.id
    @project.destroy
     redirect to '/projects'
   end
+  end
     
   delete '/projects' do 
-    @projects = Project.all 
+    @projects = Project.all.where(:user_id => session[:user_id])
+    if @project.user_id == current_user.id
     @projects.destroy_all
     redirect "/users/#{current_user.id}"
+  end
   end
   
   get '/projects/' do 
