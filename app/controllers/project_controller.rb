@@ -42,10 +42,12 @@ class ProjectController < ApplicationController
   
   get '/projects/:id/edit' do 
     #make it unique to user by session[:user_id]
-
-    @project = Project.find(params[:id])
-
-    erb :'/projects/edit'
+@project = Project.find(params[:id])
+if @project.user_id == current_user.id
+erb :'/projects/edit'
+else 
+    erb :'/users/authentication'
+  end
   end
   
    
