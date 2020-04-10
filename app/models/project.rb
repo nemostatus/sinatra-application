@@ -1,4 +1,4 @@
 class Project < ActiveRecord::Base 
-  validates_presence_of :name,:project_type, :comfort, :passion, :deadline, :description
+  validates_presence_of :name,:project_type, :comfort, :passion, :deadline
 belongs_to :user 
 end 
