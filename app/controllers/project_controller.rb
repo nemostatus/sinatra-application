@@ -5,7 +5,7 @@ class ProjectController < ApplicationController
         if logged_in?
     erb :'/projects/new'
   end
-  
+  end
   post '/projects' do 
    
    @project = Project.new(name: params[:name],
