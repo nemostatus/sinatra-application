@@ -14,7 +14,7 @@ BONUS - not required - Display validation failures to user with error message (e
 [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 Confirm #view read me
 
- [x]You have a large number of small Git commits
-[x] Your commit messages are meaningful
-[x] You made the changes in a commit that relate to the commit message
-[x] You don't include changes in a commit that aren't related to the commit message
+ [x]You have a large number of small Git commits #i have over 100 commits
+[x] Your commit messages are meaningful #i try my best to match action and message
+[x] You made the changes in a commit that relate to the commit message #yes
+[x] You don't include changes in a commit that aren't related to the commit message #true
