@@ -2,6 +2,7 @@
 
 class ProjectController < ApplicationController 
   get '/projects/new' do
+        if logged_in?
     erb :'/projects/new'
   end
   
