@@ -54,6 +54,7 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
     if @project.user_id == current_user.id
     @project.update(name: params[:name],
+    project_type: params[:project_type],
      comfort: params[:comfort],
      passion: params[:passion],
      deadline: params[:deadline],

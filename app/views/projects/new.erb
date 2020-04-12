@@ -17,34 +17,13 @@
   <br>
   <br>
   
-  On a scale from 1-10:
+   On a scale from 1-10:
   <br>
-  *How comfortable are you with your current skillset making your project idea a reality?  <select name="comfort" >
-                <option/>
-                <% (1..10).each do |num| %>                    
-                    <option value=<%= num %>>
-                        <%= num %>
-                    </option>                
-                <% end %>
-            </select>
+  *How comfortable are you with your current skillset making your project idea a reality? <input type= "number" min="1" max="10" id="comfort"  name="comfort" autocomplete="off">
   <br>
-   *How excited are you about your project idea? <select name="passion">
-       <option/>
-                <% (1..10).each do |num| %>                    
-                    <option value=<%= num %>>
-                        <%= num %>
-                    </option>                
-                <% end %>
-            </select>
+   *How excited are you about your project idea?<input type= "number" min="1" max="10" id="passion" name="passion" autocomplete="off">
   <br>
-   *How sure are you that you'll turn your idea into a reality by your project deadline? <select name = "deadline" >
-       <option/>
-                <% (1..10).each do |num| %>                    
-                    <option value=<%= num %>>
-                        <%= num %>
-                    </option>                
-                <% end %>
-            </select>
+   *How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number"min="1" max="10" id="deadline" name="deadline" autocomplete="off">
    <br>
    * Give a brief description of your project.
     <br>
