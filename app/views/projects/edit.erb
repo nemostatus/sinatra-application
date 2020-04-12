@@ -21,11 +21,32 @@
   <br>
   On a scale from 1-10:
   <br>
-  *How comfortable are you with your current skillset making your project idea a reality? <input type= "number" id="comfort" value="<%=@project.comfort%>" name="comfort" autocomplete="off">
+  *How comfortable are you with your current skillset making your project idea a reality? <select name="comfort" >
+                <option value="<%=@project.comfort%>" selected disable hidden><%=@project.comfort%>
+                <% (1..10).each do |num| %>                    
+                    <option value=<%= num %>>
+                        <%= num %>
+                    </option>                
+                <% end %>
+            </select>
   <br>
-   *How excited are you about your project idea?<input type= "number" id="passion" value="<%=@project.passion%>" name="passion" autocomplete="off">
+   *How excited are you about your project idea?<select name="passion>" >
+   <option value="<%=@project.passion%>" selected disable hidden><%=@project.passion%>
+                <% (1..10).each do |num| %>                    
+                    <option value=<%= num %>>
+                        <%= num %>
+                    </option>                
+                <% end %>
+            </select>
   <br>
-   *How sure are you that you'll turn your idea into a reality by your project deadline? <input type= "number" id="deadline"value="<%=@project.deadline%>" name="deadline" autocomplete="off">
+   *How sure are you that you'll turn your idea into a reality by your project deadline? <select name="deadline" >
+   <option value="<%=@project.deadline%>" selected disable hidden><%=@project.deadline%>
+                <% (1..10).each do |num| %>                    
+                    <option value=<%= num %>>
+                        <%= num %>
+                    </option>                
+                <% end %>
+            </select>
    <br>
    *Give a brief description of your project. 
    <br>
