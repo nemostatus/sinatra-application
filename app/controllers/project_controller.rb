@@ -11,6 +11,7 @@ class ProjectController < ApplicationController
    if params[:name] == "" || params[:project_type] == "" || 
      params[:comfort] == ""|| params[:passion]== "" ||
      params[:deadline] == "" || params[:description] == ""
+     flash[:alert] = "Please enter all required fields"
    redirect '/projects/new'
    else
    @project = Project.new(name: params[:name],
@@ -71,6 +72,7 @@ class ProjectController < ApplicationController
    )
     redirect "/projects/#{@project.id}"
   else 
+    flash[:alert] = "Please enter all required fields"
      redirect "/projects/#{@project.id}/edit"
  end
  end 

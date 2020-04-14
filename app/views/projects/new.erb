@@ -53,5 +53,11 @@
     <br>
    <input type="hidden" name="rating">
    <br>
+   <div class="flash_alert">
+        <% if flash[:alert] %>
+        <%= flash[:alert] %>
+        <% end %>
+    </div>
+    <br>
    <input type="submit">
   </form>
