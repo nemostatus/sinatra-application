@@ -11,6 +11,8 @@ class UserController < ApplicationController
 
   post '/users/signup' do 
    if params[:email] == "" || params[:username] == "" || params[:password] == ""
+
+     flash[:alert] = "Please enter all required fields"
      redirect '/users/signup' 
    else
      if params[:password] == params[:password_confirmation]
