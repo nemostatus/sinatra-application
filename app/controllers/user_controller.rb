@@ -13,6 +13,7 @@ class UserController < ApplicationController
    if params[:email] == "" || params[:username] == "" || params[:password] == ""
      redirect '/users/signup' 
    else
+     if params[:password] == params[:password_confirmation]
     @user = User.new(email: params[:email], 
     username: params[:username], 
     password: params[:password]
@@ -20,9 +21,12 @@ class UserController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
+  else
+      
+            redirect "/users/signup"
  end 
  end 
- 
+ end
  get '/login' do 
    if logged_in?   
     redirect "/users/#{current_user.id}"  
