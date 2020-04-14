@@ -8,7 +8,11 @@ class ProjectController < ApplicationController
   end
   
   post '/projects' do 
-   
+   if params[:name] == "" || params[:project_type] == "" || 
+     params[:comfort] == ""|| params[:passion]== "" ||
+     params[:deadline] == "" || params[:description] == ""
+   redirect '/projects/new'
+   else
    @project = Project.new(name: params[:name],
    project_type: params[:project_type],
    comfort: params[:comfort],
@@ -23,6 +27,7 @@ class ProjectController < ApplicationController
   
    redirect "/projects/#{@project.id}"
   end 
+  end
   
   get '/projects/:id' do 
     #match project user_id with current user_id
