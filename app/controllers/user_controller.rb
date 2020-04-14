@@ -24,7 +24,7 @@ class UserController < ApplicationController
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else
-      
+      flash[:alert] = "Passwords do not match"
             redirect "/users/signup"
  end 
  end 
