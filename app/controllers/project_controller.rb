@@ -57,7 +57,9 @@ class ProjectController < ApplicationController
    
   patch '/projects/:id' do
     @project = Project.find(params[:id])
-    if @project.user_id == current_user.id
+    if @project.user_id == current_user.id && params[:name] != "" && params[:project_type] != "" && 
+     params[:comfort] != ""&&params[:passion]!= "" &&
+     params[:deadline] != "" && params[:description] != ""
     @project.update(name: params[:name],
     project_type: params[:project_type],
      comfort: params[:comfort],
@@ -67,6 +69,8 @@ class ProjectController < ApplicationController
      rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
      )
     redirect "/projects/#{@project.id}"
+  else 
+     redirect "/projects/#{@project.id}/edit"
  end
  end 
  
