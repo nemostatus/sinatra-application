@@ -21,11 +21,11 @@ You're overall project idea rating is <%=@project.rating%>/30
 
 <%end%>
 <br>
-<% if @project.rating.to_i >= 27%>  Project idea Grade: A
-<%elsif @project.rating.to_i >= 24%>  Project idea Grade: B
-<%elsif @project.rating.to_i >= 21%> Project idea Grade: C
-<%elsif @project.rating.to_i >= 18%>Project idea Grade: D
-<%elsif @project.rating.to_i == 0%>
+<% if @project.rating.to_i >= 27%> *Project idea Grade: A
+<%elsif @project.rating.to_i >= 24%>  *Project idea Grade: B
+<%elsif @project.rating.to_i >= 21%> *Project idea Grade: C
+<%elsif @project.rating.to_i >= 18%>*Project idea Grade: D
+
 <%else%>*Project idea Grade: F
 <%end%>
 <br>
