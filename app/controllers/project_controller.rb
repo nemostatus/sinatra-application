@@ -61,13 +61,14 @@ class ProjectController < ApplicationController
      params[:comfort] != ""&&params[:passion]!= "" &&
      params[:deadline] != "" && params[:description] != ""
     @project.update(name: params[:name],
-    project_type: params[:project_type],
-     comfort: params[:comfort],
-     passion: params[:passion],
-     deadline: params[:deadline],
-     description: params[:description],
-     rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i
-     )
+   project_type: params[:project_type],
+   comfort: params[:comfort],
+   passion: params[:passion],
+   deadline: params[:deadline],
+   description: params[:description],
+   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i,
+  
+   )
     redirect "/projects/#{@project.id}"
   else 
      redirect "/projects/#{@project.id}/edit"
