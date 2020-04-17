@@ -41,7 +41,8 @@ class ProjectController < ApplicationController
   end
   
   get '/projects' do 
-    @projects = Project.where(:user_id => session[:user_id]).order('rating DESC','project_type ASC')
+    #@projects = Project.where(:user_id => session[:user_id]).order('rating DESC','project_type ASC')
+    @projects = current_user.projects.order('rating DESC','project_type ASC')
     erb :'/projects/index'
   end 
   
@@ -58,18 +59,19 @@ class ProjectController < ApplicationController
    
   patch '/projects/:id' do
     @project = Project.find(params[:id])
-    if @project.user_id == current_user.id && params[:name] != "" && params[:project_type] != "" && 
-     params[:comfort] != ""&&params[:passion]!= "" &&
-     params[:deadline] != "" && params[:description] != ""
-    @project.update(name: params[:name],
-   project_type: params[:project_type],
-   comfort: params[:comfort],
-   passion: params[:passion],
-   deadline: params[:deadline],
-   description: params[:description],
-   rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i,
+   # if @project.user_id == current_user.id && params[:name] != "" && params[:project_type] != "" && 
+    # params[:comfort] != ""&&params[:passion]!= "" &&
+     #params[:deadline] != "" && params[:description] != ""
+    #@project.update(name: params[:name],
+   #project_type: params[:project_type],
+   #comfort: params[:comfort],
+   #passion: params[:passion],
+   #deadline: params[:deadline],
+   #description: params[:description],
+   #rating: params[:rating]= params[:comfort].to_i+params[:passion].to_i+params[:deadline].to_i,
   
-   )
+  # )
+  if @project.update(params)
     redirect "/projects/#{@project.id}"
   else 
     flash[:alert] = "Please enter all required fields"
